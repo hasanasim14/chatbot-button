@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { Textarea } from "../ui/textarea";
 import { ArrowUp, Clock } from "lucide-react";
 
@@ -20,6 +20,13 @@ export const TextAreaMessage = ({
   sendMessage = () => {},
 }: TextAreaMessageProps) => {
   const inputRef = useRef<HTMLTextAreaElement>(null);
+
+  // Focus on the text area
+  useEffect(() => {
+    if (!isLoading && !timeoutState) {
+      inputRef.current?.focus();
+    }
+  }, [isLoading, timeoutState]);
 
   return (
     <div className="px-4 py-2 border-t bg-white">
