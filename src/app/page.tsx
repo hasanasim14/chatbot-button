@@ -118,8 +118,6 @@ export default function ChatButton() {
     }
   };
 
-  console.log("currentPage is:", typeof currentPage);
-
   return (
     <div className="flex flex-col items-center py-8 px-4 py-0 text-white h-full">
       <div className="w-full max-w-4xl text-center mt-2">
